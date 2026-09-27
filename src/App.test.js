@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import App from './App';
 
 describe('portfolio', () => {
@@ -17,13 +17,16 @@ describe('portfolio', () => {
   test('links to the selected project repositories', () => {
     render(<App />);
 
-    expect(screen.getByRole('link', { name: /view repository/i })).toHaveAttribute(
+    const portfolioCard = screen.getByRole('heading', { name: 'Portfolio Website' }).closest('article');
+    expect(within(portfolioCard).getByRole('link', { name: /view repository/i })).toHaveAttribute(
       'href',
       'https://github.com/tacojun/Portfolio-Website-React-Tailwind-'
     );
 
-    const repositoryLinks = screen.getAllByRole('link', { name: /view repository/i });
-    expect(repositoryLinks).toHaveLength(2);
-    expect(repositoryLinks[1]).toHaveAttribute('href', 'https://github.com/tacojun/Flask-Chatbot');
+    const chatbotCard = screen.getByRole('heading', { name: 'Flask Chatbot' }).closest('article');
+    expect(within(chatbotCard).getByRole('link', { name: /view repository/i })).toHaveAttribute(
+      'href',
+      'https://github.com/tacojun/Flask-Chatbot'
+    );
   });
 });
