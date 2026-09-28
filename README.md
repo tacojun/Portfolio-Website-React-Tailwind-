@@ -19,6 +19,14 @@ npm start
 
 Then open `http://localhost:3000`.
 
+## Tests
+
+```bash
+npm test
+```
+
+The React Testing Library tests in `src/App.test.js` check the main heading, navigation, and project repository links. The GitHub Actions build workflow runs these tests and the production build on pull requests and pushes to `main`.
+
 ## Production build
 
 ```bash
@@ -32,7 +40,9 @@ public/
   index.html
 src/
   App.js
+  App.test.js
   index.js
+  setupTests.js
   styles.css
 package.json
 README.md
@@ -44,7 +54,6 @@ Changes are tracked with GitHub issues and developed on feature branches before 
 
 ## Next steps
 
-- add component tests
 - add a dedicated skills/experience section
 - add project screenshots
 - deploy a public preview
