@@ -6,8 +6,13 @@ const projects = [
   },
   {
     title: 'Flask Chatbot',
-    description: 'A Python and Flask project being improved with clearer configuration, documentation, and tests.',
+    description: 'A deterministic Flask chatbot demo with a JSON API, input validation, and tests.',
     href: 'https://github.com/tacojun/Flask-Chatbot'
+  },
+  {
+    title: 'Duyuru Kontrol',
+    description: 'A Python CLI that checks Turkish announcement dates against weekdays and optional character limits.',
+    href: 'https://github.com/tacojun/duyuru-kontrol'
   }
 ];
 

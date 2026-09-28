@@ -28,5 +28,11 @@ describe('portfolio', () => {
       'href',
       'https://github.com/tacojun/Flask-Chatbot'
     );
+
+    const duyuruCard = screen.getByRole('heading', { name: 'Duyuru Kontrol' }).closest('article');
+    expect(within(duyuruCard).getByRole('link', { name: /view repository/i })).toHaveAttribute(
+      'href',
+      'https://github.com/tacojun/duyuru-kontrol'
+    );
   });
 });
